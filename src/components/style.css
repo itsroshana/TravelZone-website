@@ -8,31 +8,47 @@
 html {
   scroll-behavior: smooth;
 }
+ 
 
-.navbar {
+/* Navbar */
+#navbar {
   position: fixed;
+  top: 0;
   width: 100%;
-  padding: 20px 60px;
+  padding: 15px 60px;
   display: flex;
   justify-content: space-between;
-  transition: 0.3s;
-  color: white;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   z-index: 1000;
 }
 
-.navbar ul {
+/* Logo */
+#navbar h2 {
+  color: white;
+  font-size: 24px;
+}
+
+/* Menu */
+#navbar ul {
+  list-style: none;
   display: flex;
   gap: 30px;
-  list-style: none;
 }
 
-.navbar a {
-  color: white;
+/* Links */
+#navbar ul li a {
   text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.navbar.scrolled {
-  background: black;
+/* Hover effect */
+#navbar ul li a:hover {
+  color: #f4b400;
 }
 
 .hero {
