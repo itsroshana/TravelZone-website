@@ -1,72 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Travel Zone</title>
-  <link rel="stylesheet" href="./src/components/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Zone Tours & Travels – Madurai</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+ <link rel="stylesheet" href="./src/components/style.css">
+ <link rel="icon" type="image/png" href="./public/logo.jpeg">
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav id="navbar">
-  <h2>TravelZone</h2>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#tours">Tours</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="nav-brand">
+  <div class="nav-mark">
+  <img src="./public/logo-removebg-preview.png" alt="Travel Zone Logo" />
+</div>
+    <div class="nav-txt">
+      <span class="nav-name">Travel Zone</span>
+      <span class="nav-sub">Tours & Travels · Madurai</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#packages">Packages</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#honeymoon">Honeymoon</a>
+    <a href="#cab">Cab Booking</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact" class="nav-cta">Book Now</a>
+  </div>
+ <div class="ham" id="menuBtn" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero" id="home">
-  <video autoplay loop muted>
-    <source src="./public/857195-hd_1280_720_25fps.mp4" type="video/mp4">
-  </video>
-  <div class="hero-content">
-    <h1>Explore Luxury Travel</h1>
-    <p>Premium Tours & Transportation</p>
-    <button>Book Now</button>
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <div class="mob-x" onclick="closeM()"><i class="fas fa-times"></i></div>
+  <a href="#about" onclick="closeM()">About Us</a>
+  <a href="#packages" onclick="closeM()">Packages</a>
+  <a href="#destinations" onclick="closeM()">Destinations</a>
+  <a href="#honeymoon" onclick="closeM()">Honeymoon</a>
+  <a href="#cab" onclick="closeM()">Cab Booking</a>
+  <a href="#reviews" onclick="closeM()">Reviews</a>
+  <a href="#contact" onclick="closeM()" style="color:var(--gold)">Book Now</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="h-slider" id="hSlider">
+    <div class="h-slide active" style="background-image:url('./public/gautham-arcot-igs_-6rhtnQ-unsplash.jpg')"></div>
+    <div class="h-slide" style="background-image:url('./public/nature-photographer-29ezCWtMtnM-unsplash.jpg')"></div>
+    <div class="h-slide" style="background-image:url('./public/pushpak-bhandari-QESNi9V1_ZE-unsplash.jpg')"></div>
+    <div class="h-slide" style="background-image:url('./public/pexels-tanmoy-pal-3640736-17666276.jpg')"></div>
+    <div class="h-slide" style="background-image:url('./public/pexels-srds-5330349.jpg')"></div>
+  </div>
+  <div class="h-overlay"></div>
+  <div class="h-content">
+    <div class="h-pill">✦ Trusted Since 2012 &nbsp;·&nbsp; Madurai, Tamil Nadu</div>
+    <h1 class="h-title">Discover South India<br><em>Like Never Before</em></h1>
+    <p class="h-sub">Curated tour packages, honeymoon getaways & reliable cab services — crafted with care from the heart of Madurai.</p>
+    <div class="h-btns">
+      <a href="#packages" class="btn-gold">Explore Packages <i class="fas fa-arrow-right"></i></a>
+      <a href="#cab" class="btn-outline-white">Book a Cab <i class="fas fa-car"></i></a>
+    </div>
+  </div>
+  <div class="h-dots" id="hDots"></div>
+  <div class="h-stats">
+    <div class="h-stat"><div class="h-stat-inner"><div class="s-num">5000+</div><div class="s-lbl">Happy Travellers</div></div></div>
+    <div class="h-stat"><div class="h-stat-inner"><div class="s-num">12+</div><div class="s-lbl">Years Experience</div></div></div>
+    <div class="h-stat"><div class="h-stat-inner"><div class="s-num">80+</div><div class="s-lbl">Destinations</div></div></div>
+    <div class="h-stat"><div class="h-stat-inner"><div class="s-num">4.9★</div><div class="s-lbl">Avg. Rating</div></div></div>
   </div>
 </section>
 
-<!-- Counter -->
-<section class="counter">
-  <h2><span id="count">0</span>+ Happy Clients</h2>
-</section>
+<!-- MARQUEE -->
+<div class="mq-wrap">
+  <div class="mq-track" id="mqTrack"></div>
+</div>
 
-<!-- Tours -->
-<section class="tours" id="tours">
-  <h2>Popular Tours</h2>
-  <div class="tour-container">
-    <div class="tour-card">
-      <h3>Banff Luxury Tour</h3>
-      <p>Premium SUV Experience</p>
-    </div>
-    <div class="tour-card">
-      <h3>Lake Louise Trip</h3>
-      <p>Scenic Beauty Adventure</p>
-    </div>
-    <div class="tour-card">
-      <h3>National Park Tour</h3>
-      <p>Full Day Guided Tour</p>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-g">
+      <div class="about-vis reveal">
+        <img class="ab-main" src="./public/holly-mandarich-UVyOfX3v0Ls-unsplash.jpg" alt="Madurai">
+        <img class="ab-sm b" src="./public/robin-noguier-sydwCr54rf0-unsplash.jpg" alt="Kerala">
+        <img class="ab-sm m" src="./public/pexels-gvbrielh-3593923.jpg" alt="Hills">
+        <div class="ab-badge"><span class="ab-num">12+</span><span class="ab-lbl">Years of Trust</span></div>
+      </div>
+      <div class="reveal d1">
+        <div class="eyebrow">About Travel Zone</div>
+        <h2 class="s-title">Welcome to<br><em>Travel Zone</em></h2>
+        <div class="divline"></div>
+        <p class="body-t" style="margin-bottom:14px">We are Madurai's most trusted travel companion — crafting unforgettable journeys across South India since 2012. From sacred temple circuits to breathtaking hill stations, each trip is thoughtfully curated for your comfort and joy.</p>
+        <p class="body-t">Our promise: transparency, genuine warmth, and reliability at every step — whether it's a solo pilgrimage, a family holiday, or a romantic honeymoon escape.</p>
+        <div class="ab-feats">
+          <div class="ab-feat"><div class="ab-ic"><i class="fas fa-check"></i></div>Fully customised packages tailored to your budget & needs</div>
+          <div class="ab-feat"><div class="ab-ic"><i class="fas fa-check"></i></div>AC cabs with verified, experienced, licensed drivers</div>
+          <div class="ab-feat"><div class="ab-ic"><i class="fas fa-check"></i></div>24/7 customer support throughout your entire journey</div>
+          <div class="ab-feat"><div class="ab-ic"><i class="fas fa-check"></i></div>Transparent pricing — zero hidden charges, always</div>
+        </div>
+        <a href="#contact" class="btn-navy">Plan Your Journey <i class="fas fa-arrow-right"></i></a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Parallax -->
-<section class="parallax">
-  <h2>Experience The Journey</h2>
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="wrap">
+    <div class="pkg-head reveal">
+      <div>
+        <div class="eyebrow">Tour Packages</div>
+        <h2 class="s-title">Handcrafted <em>Experiences</em></h2>
+      </div>
+      <a href="#contact" class="btn-ghost">View All <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card wide reveal">
+        <div class="pkg-img-box">
+          <img class="pkg-img" src="./public/pexels-kavya-pothabattula-388296612-20322321.jpg" alt="Temple Tour">
+          <span class="pkg-tag">Most Popular</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-cat">Cultural · Spiritual</div>
+          <div class="pkg-title">South India Temple Circuit</div>
+          <p class="pkg-desc">Meenakshi Amman, Brihadeeswarar, Ramanathaswamy & more — a sacred journey through Tamil Nadu's divine heritage with expert guides and premium stays.</p>
+          <div class="pkg-foot"><a href="#contact" class="pkg-link">Enquire Now <i class="fas fa-arrow-right"></i></a><span class="pkg-badge">⭐ Top Rated</span></div>
+        </div>
+      </div>
+      <div class="pkg-card reveal d1">
+        <div class="pkg-img-box"><img class="pkg-img" src="https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?w=600&q=80" alt="Honeymoon"><span class="pkg-tag g">Honeymoon</span></div>
+        <div class="pkg-body"><div class="pkg-cat">Romance · Leisure</div><div class="pkg-title">Honeymoon Special</div><p class="pkg-desc">Kerala, Ooty & Kodaikanal — romance in the clouds and backwaters.</p><div class="pkg-foot"><a href="#contact" class="pkg-link">Enquire Now <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+      <div class="pkg-card reveal d2">
+        <div class="pkg-img-box"><img class="pkg-img" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Hills"><span class="pkg-tag">Hill Stations</span></div>
+        <div class="pkg-body"><div class="pkg-cat">Nature · Adventure</div><div class="pkg-title">Hill Station Escape</div><p class="pkg-desc">Ooty, Kodaikanal & Munnar — cool breezes and misty mornings await.</p><div class="pkg-foot"><a href="#contact" class="pkg-link">Enquire Now <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+      <div class="pkg-card reveal">
+        <div class="pkg-img-box"><img class="pkg-img" src="./public/pexels-elena-zhuravleva-647531-1457812.jpg" alt="Coastal"><span class="pkg-tag">Coastal</span></div>
+        <div class="pkg-body"><div class="pkg-cat">Pilgrimage · Coastal</div><div class="pkg-title">Coastal Tamil Nadu</div><p class="pkg-desc">Rameswaram & Kanyakumari — where land meets three seas.</p><div class="pkg-foot"><a href="#contact" class="pkg-link">Enquire Now <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+      <div class="pkg-card reveal d1">
+        <div class="pkg-img-box"><img class="pkg-img" src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Kerala"><span class="pkg-tag">Kerala</span></div>
+        <div class="pkg-body"><div class="pkg-cat">Nature · Relaxation</div><div class="pkg-title">Kerala Backwaters</div><p class="pkg-desc">Alleppey houseboats, Munnar tea estates & Wayanad forest stays.</p><div class="pkg-foot"><a href="#contact" class="pkg-link">Enquire Now <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+      <div class="pkg-card reveal d2">
+        <div class="pkg-img-box"><img class="pkg-img" src="./public/pexels-dharamveer-7152003.jpg" alt="Andhra"><span class="pkg-tag">Andhra</span></div>
+        <div class="pkg-body"><div class="pkg-cat">Pilgrimage</div><div class="pkg-title">Andhra Temple Tour</div><p class="pkg-desc">Tirupati, Srikalahasti & beyond — pilgrim circuits of Andhra Pradesh.</p><div class="pkg-foot"><a href="#contact" class="pkg-link">Enquire Now <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+      <div class="pkg-card reveal">
+        <div class="pkg-img-box"><img class="pkg-img" src="./public/pexels-tanmoy-pal-3640736-17666276.jpg" alt="Karnataka"><span class="pkg-tag">Karnataka</span></div>
+        <div class="pkg-body"><div class="pkg-cat">Heritage · Nature</div><div class="pkg-title">Karnataka Explorer</div><p class="pkg-desc">Mysore, Hampi, Coorg & Gokarna — heritage meets natural wonder.</p><div class="pkg-foot"><a href="#contact" class="pkg-link">Enquire Now <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+      <div class="pkg-card reveal d1" style="border-color:var(--gold-border);background:linear-gradient(145deg,var(--bg),#fefbf0)">
+        <div class="pkg-img-box"><img class="pkg-img" src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=80" alt="Custom"><span class="pkg-tag g">Custom</span></div>
+        <div class="pkg-body"><div class="pkg-cat">Any Destination</div><div class="pkg-title">Custom Trip Builder</div><p class="pkg-desc">Tell us your dream — we'll craft the perfect itinerary just for you.</p><div class="pkg-foot"><a href="#contact" class="pkg-link" style="color:var(--gold)">Build Your Trip <i class="fas fa-arrow-right"></i></a></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Contact -->
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <input type="text" placeholder="Your Name">
-  <input type="email" placeholder="Your Email">
-  <textarea placeholder="Your Message"></textarea>
-  <button>Send Message</button>
+<!-- DESTINATIONS -->
+<section id="destinations">
+  <div class="wrap">
+    <div class="dest-head reveal">
+      <div>
+        <div class="eyebrow">Top Destinations</div>
+        <h2 class="s-title" style="color:var(--white)">Places That <em>Inspire</em></h2>
+      </div>
+      <a href="#contact" class="dest-see-all">All Destinations <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="dest-layout">
+      <div class="d-card main reveal">
+        <div class="d-bg" style="background-image:url('./public/pexels-ryshy-s-2149956588-36365079\ \(1\).jpg')"></div>
+        <div class="d-grad"></div>
+        <div class="d-info"><div class="d-tag">Temple City · Tamil Nadu</div><div class="d-name">Madurai</div><div class="d-desc">City of Jasmine · Eternal City of the South</div></div>
+        <div class="d-arrow"><i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="d-card reveal d1">
+        <div class="d-bg" style="background-image:url('./public/pexels-ravikant-5303087.jpg')"></div>
+        <div class="d-grad"></div>
+        <div class="d-info"><div class="d-tag">Hill Station</div><div class="d-name">Kodaikanal</div><div class="d-desc">Princess of Hill Stations</div></div>
+        <div class="d-arrow"><i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="d-card reveal d2">
+        <div class="d-bg" style="background-image:url('./public/pexels-srds-5330349.jpg')"></div>
+        <div class="d-grad"></div>
+        <div class="d-info"><div class="d-tag">Hill Station</div><div class="d-name">Ooty</div><div class="d-desc">Queen of the Nilgiris</div></div>
+        <div class="d-arrow"><i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="d-card reveal d1">
+        <div class="d-bg" style="background-image:url('./public/pexels-jadhav24omkar-13621055.jpg')"></div>
+        <div class="d-grad"></div>
+        <div class="d-info"><div class="d-tag">Pilgrimage</div><div class="d-name">Rameswaram</div><div class="d-desc">Sacred Island Pilgrimage</div></div>
+        <div class="d-arrow"><i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="d-card reveal d2">
+        <div class="d-bg" style="background-image:url('./public/pexels-swastikarora-19743480.jpg')"></div>
+        <div class="d-grad"></div>
+        <div class="d-info"><div class="d-tag">Kerala</div><div class="d-name">Munnar</div><div class="d-desc">Tea Gardens & Misty Peaks</div></div>
+        <div class="d-arrow"><i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<script src="script.js"></script>
+<!-- CAB -->
+<section id="cab">
+  <div class="wrap">
+    <div class="cab-g">
+      <div class="reveal">
+        <div class="eyebrow">Cab Services</div>
+        <h2 class="s-title">Reliable Rides,<br><em>Every Journey</em></h2>
+        <div class="divline"></div>
+        <p class="body-t">From airport transfers to multi-day outstation trips, our professional drivers ensure you travel in comfort, safety and style.</p>
+        <div class="cab-feats">
+          <div class="cab-f"><div class="cab-ic"><i class="fas fa-snowflake"></i></div><div><div class="cab-ft">24/7 AC Cabs Available</div><div class="cab-fd">Round-the-clock availability for any time pickups and emergencies.</div></div></div>
+          <div class="cab-f"><div class="cab-ic"><i class="fas fa-user-shield"></i></div><div><div class="cab-ft">Verified & Licensed Drivers</div><div class="cab-fd">Police-verified drivers experienced in city and outstation routes.</div></div></div>
+          <div class="cab-f"><div class="cab-ic"><i class="fas fa-tags"></i></div><div><div class="cab-ft">Transparent Pricing</div><div class="cab-fd">What we quote is exactly what you pay. Zero hidden charges.</div></div></div>
+          <div class="cab-f"><div class="cab-ic"><i class="fas fa-route"></i></div><div><div class="cab-ft">One-Way & Round Trips</div><div class="cab-fd">Airport drops, city tours, outstation & multi-day trips available.</div></div></div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <div class="fcard">
+          <div class="fc-title">Request a Cab</div>
+          <p class="fc-sub">Fill in details — we'll call you within 10 minutes.</p>
+          <div class="frow"><div class="fgrp"><label>Vehicle Type</label><select><option>Sedan (4 Seater)</option><option>SUV (6 Seater)</option><option>Innova Crysta</option><option>Tempo Traveller (12 Seater)</option></select></div><div class="fgrp"><label>Trip Type</label><select><option>One Way</option><option>Round Trip</option><option>Airport Transfer</option><option>Local (8hrs / 80km)</option><option>Outstation</option></select></div></div>
+          <div class="frow"><div class="fgrp"><label>Pickup Location</label><input type="text" placeholder="e.g. Madurai Airport"></div><div class="fgrp"><label>Drop Location</label><input type="text" placeholder="e.g. Kodaikanal"></div></div>
+          <div class="frow"><div class="fgrp"><label>Date</label><input type="date"></div><div class="fgrp"><label>Time</label><input type="time"></div></div>
+          <div class="frow one"><div class="fgrp"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 84387 92993"></div></div>
+          <button class="fsub gold" onclick="okCab()">Request Cab Now <i class="fas fa-arrow-right"></i></button>
+          <div class="ok-msg" id="cabOk">
+            <i class="fas fa-check-circle"></i> Request received! We'll call you within 10 minutes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEYMOON -->
+<section id="honeymoon">
+  <div class="wrap">
+    <div style="text-align:center;max-width:580px;margin:0 auto" class="reveal">
+      <div class="eyebrow" style="justify-content:center"><span style="width:28px;height:1.5px;background:var(--sky);display:block"></span>For Couples<span style="width:28px;height:1.5px;background:var(--sky);display:block"></span></div>
+      <h2 class="s-title" style="text-align:center">Begin Your <em>Forever</em> Here</h2>
+      <div class="divline" style="margin:20px auto"></div>
+      <p class="body-t" style="text-align:center">Romantic getaways crafted for two — every detail, every moment, unforgettable.</p>
+    </div>
+    <div class="honey-g">
+      <div class="hcard reveal">
+        <div class="d-bg" style="background-image:url('./public/pexels-j-j-wins-485643-31460972.jpg')"></div>
+        <div class="h-over"></div>
+        <div class="h-info"><div class="h-icon-b">🛶</div><div class="h-name">Kerala Houseboats</div><div class="h-desc">Drift through tranquil backwaters under a canopy of stars</div></div>
+      </div>
+      <div class="hcard reveal d1">
+        <div class="d-bg" style="background-image:url('./public/pexels-nandhukumar-943592.jpg')"></div>
+        <div class="h-over"></div>
+        <div class="h-info"><div class="h-icon-b">🌲</div><div class="h-name">Kodaikanal</div><div class="h-desc">Misty lake mornings and pine forest walks for two</div></div>
+      </div>
+      <div class="hcard reveal d2">
+        <div class="d-bg" style="background-image:url('./public/pexels-pixabay-50594.jpg')"></div>
+        <div class="h-over"></div>
+        <div class="h-info"><div class="h-icon-b">🌊</div><div class="h-name">Andaman</div><div class="h-desc">Crystal lagoons, coral reefs & private beach sunsets</div></div>
+      </div>
+      <div class="hcard reveal d3">
+        <div class="d-bg" style="background-image:url('./public/pexels-raf-2-0-1290669-29175434.jpg')"></div>
+        <div class="h-over"></div>
+        <div class="h-info"><div class="h-icon-b">🍃</div><div class="h-name">Munnar</div><div class="h-desc">Romance amid endless tea gardens and cool mountain air</div></div>
+      </div>
+    </div>
+    <div class="honey-cta reveal">
+      <p>Let us make your love story unforgettable — every detail customised for two.</p>
+      <a href="#contact" class="btn-gold">Plan Your Honeymoon <i class="fas fa-heart"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:52px" class="reveal">
+      <div class="eyebrow" style="justify-content:center"><span style="width:28px;height:1.5px;background:var(--sky);display:block"></span>Testimonials<span style="width:28px;height:1.5px;background:var(--sky);display:block"></span></div>
+      <h2 class="s-title" style="text-align:center">Voices of Our <em>Travellers</em></h2>
+    </div>
+    <div class="rv-grid">
+      <div class="rv-card reveal"><div class="rv-q"><i class="fas fa-quote-left"></i></div><div class="stars">★★★★★</div><p class="rv-text">"Booked a cab to Kodaikanal and the experience was seamless. The driver was punctual, friendly and took us to hidden viewpoints we'd never have found ourselves."</p><div class="rv-person"><div class="rv-av">P</div><div><div class="rv-name">Priya Sundaram</div><div class="rv-loc"><i class="fas fa-map-marker-alt"></i> Chennai · Cab Service</div></div></div></div>
+      <div class="rv-card reveal d1"><div class="rv-q"><i class="fas fa-quote-left"></i></div><div class="stars">★★★★★</div><p class="rv-text">"Our honeymoon trip to Kerala was absolutely magical. Travel Zone arranged everything — houseboat, resort, sightseeing. My wife calls it the best trip of her life!"</p><div class="rv-person"><div class="rv-av">A</div><div><div class="rv-name">Arjun & Meena</div><div class="rv-loc"><i class="fas fa-map-marker-alt"></i> Madurai · Honeymoon Package</div></div></div></div>
+      <div class="rv-card reveal d2"><div class="rv-q"><i class="fas fa-quote-left"></i></div><div class="stars">★★★★★</div><p class="rv-text">"The South India temple tour exceeded all expectations. Guide was knowledgeable, arrangements were impeccable. Highly recommend Travel Zone to all pilgrims."</p><div class="rv-person"><div class="rv-av">R</div><div><div class="rv-name">Ramamurthi Iyer</div><div class="rv-loc"><i class="fas fa-map-marker-alt"></i> Coimbatore · Temple Tour</div></div></div></div>
+      <div class="rv-card reveal"><div class="rv-q"><i class="fas fa-quote-left"></i></div><div class="stars">★★★★★</div><p class="rv-text">"Took our family of 8 on a Karnataka trip. Travel Zone arranged a Tempo Traveller with an excellent driver. Hotels were great, itinerary was perfect. Will book again!"</p><div class="rv-person"><div class="rv-av">S</div><div><div class="rv-name">Suresh Krishnan</div><div class="rv-loc"><i class="fas fa-map-marker-alt"></i> Tirunelveli · Family Trip</div></div></div></div>
+      <div class="rv-card reveal d1"><div class="rv-q"><i class="fas fa-quote-left"></i></div><div class="stars">★★★★★</div><p class="rv-text">"Best travel agency in Madurai, no doubt. Affordable pricing, no hidden costs, genuine hospitality. Our Rameswaram trip was peaceful and beautifully organised."</p><div class="rv-person"><div class="rv-av">K</div><div><div class="rv-name">Kavitha Devi</div><div class="rv-loc"><i class="fas fa-map-marker-alt"></i> Trichy · Pilgrim Package</div></div></div></div>
+      <div class="rv-card reveal d2"><div class="rv-q"><i class="fas fa-quote-left"></i></div><div class="stars">★★★★★</div><p class="rv-text">"I've used Travel Zone for 3 trips now. Each time the service gets better. The team is responsive on WhatsApp and really goes the extra mile to make you feel special."</p><div class="rv-person"><div class="rv-av">V</div><div><div class="rv-name">Vijay Anand</div><div class="rv-loc"><i class="fas fa-map-marker-alt"></i> Madurai · Multiple Trips</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="ct-g">
+      <div class="reveal">
+        <div class="eyebrow">Get In Touch</div>
+        <h2 class="s-title" style="color:var(--white)">Let's Plan Your<br><em>Adventure</em></h2>
+        <div class="divline"></div>
+        <p class="body-t" style="color:rgba(255,255,255,0.52);margin-bottom:36px">Reach out and let's craft your perfect journey together. We respond within 2 hours.</p>
+        <div class="ct-card"><div class="ct-ic"><i class="fas fa-map-marker-alt"></i></div><div><div class="ct-lbl">Our Office</div><div class="ct-val">68/127, Thomas Cross St, sarvodaya 3rd, Mahaboopalayam,<br> Madurai, Tamil Nadu 625016</div></div></div>
+        <div class="ct-card"><div class="ct-ic"><i class="fab fa-whatsapp"></i></div><div><div class="ct-lbl">Phone & WhatsApp</div><div class="ct-val">+91 84387 92993 &nbsp;|&nbsp; +91 95975 86619</div></div></div>
+        <div class="ct-card"><div class="ct-ic"><i class="fas fa-envelope"></i></div><div><div class="ct-lbl">Email</div><div class="ct-val">info@travelzonetours.in<br>bookings@travelzonetours.in</div></div></div>
+        <div class="ct-card"><div class="ct-ic"><i class="fas fa-clock"></i></div><div><div class="ct-lbl">Working Hours</div><div class="ct-val">Mon – Sat: 8:00 AM – 9:00 PM<br>Sunday: 9:00 AM – 6:00 PM</div></div></div>
+      </div>
+      <div class="reveal d1">
+        <div class="ct-fcard">
+          <div class="fc-title">Send an Enquiry</div>
+          <p class="fc-sub">Tell us your travel plans — we'll design the perfect package.</p>
+          <div class="frow"><div class="fgrp"><label>Your Name</label><input type="text" placeholder="Full name"></div><div class="fgrp"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div></div>
+          <div class="frow one"><div class="fgrp"><label>Email</label><input type="email" placeholder="your@email.com"></div></div>
+          <div class="frow"><div class="fgrp"><label>Package / Service</label><select><option>Temple Tour</option><option>Honeymoon Package</option><option>Hill Station Trip</option><option>Kerala Backwaters</option><option>Cab Booking</option><option>Custom Package</option></select></div><div class="fgrp"><label>Travel Date</label><input type="date"></div></div>
+          <div class="frow one"><div class="fgrp"><label>No. of Travellers</label><input type="number" placeholder="e.g. 4" min="1"></div></div>
+          <div class="frow one"><div class="fgrp"><label>Message</label><textarea placeholder="Tell us about your dream trip…"></textarea></div></div>
+          <button class="fsub navy" onclick="okEnq()">Submit Enquiry <i class="fas fa-paper-plane"></i></button>
+          <div class="ok-msg" id="enqOk"><i class="fas fa-check-circle"></i> Thank you! We'll reach out to you within an hour.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-g">
+      <div>
+        <div class="ft-mark">
+            <img src="./public/logo-removebg-preview.png" alt="Travel Zone Logo" />
+        </div>
+        <div class="ft-name">Travel Zone</div>
+        <div class="ft-sub">Tours & Travels · Madurai</div>
+        <p class="ft-desc">Madurai's most trusted travel companion since 2012. We create journeys that become lifelong memories — across South India and beyond.</p>
+        <div class="ft-socs">
+          <div class="soc"><i class="fab fa-facebook-f"></i></div>
+          <div class="soc"><i class="fab fa-instagram"></i></div>
+          <div class="soc"><i class="fab fa-whatsapp"></i></div>
+          <div class="soc"><i class="fab fa-youtube"></i></div>
+        </div>
+      </div>
+      <div class="ft-col"><h4>Packages</h4><a href="#packages">Temple Tours</a><a href="#packages">Honeymoon Special</a><a href="#packages">Hill Stations</a><a href="#packages">Kerala Backwaters</a><a href="#packages">Custom Trips</a></div>
+      <div class="ft-col"><h4>Services</h4><a href="#cab">Cab Booking</a><a href="#honeymoon">Honeymoon Trips</a><a href="#packages">Pilgrim Tours</a><a href="#packages">Family Packages</a><a href="#contact">Corporate Travel</a></div>
+      <div class="ft-col"><h4>Destinations</h4><a href="#destinations">Madurai</a><a href="#destinations">Kodaikanal</a><a href="#destinations">Rameswaram</a><a href="#destinations">Munnar</a><a href="#destinations">Ooty</a></div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2024 <span class="ft-g-txt">Travel Zone Tours & Travels</span>, Madurai. All rights reserved.</p>
+    <p>Crafted with <span class="ft-g-txt">♥</span> in Tamil Nadu, India</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="wa" href="https://wa.me/918438792993?text=Hi%20Travel%20Zone,%0AI%20would%20like%20to%20enquire%20about:%0A-%20Tour%20Packages%0A-%20Cab%20Services%0APlease%20share%20details." target="_blank">
+  <i class="fab fa-whatsapp"></i><span>Chat on WhatsApp</span>
+</a>
+
+<script>
+/* NAVBAR */
+
+const nb = document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  nb.classList.toggle('scrolled', window.scrollY > 60);
+});
+const mobNav = document.getElementById('mobNav');
+const menuBtn = document.getElementById('menuBtn');
+
+function toggleMenu() {
+  mobNav.classList.toggle('open');
+  menuBtn.classList.toggle('active');
+
+  if (mobNav.classList.contains('open')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+/* MOBILE */
+function openM(){ document.getElementById('mobNav').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeM(){ document.getElementById('mobNav').classList.remove('open'); document.body.style.overflow=''; }
+
+/* HERO SLIDER */
+const slides = document.querySelectorAll('.h-slide');
+const dotsW = document.getElementById('hDots');
+let cur=0, htimer;
+slides.forEach((_,i)=>{
+  const d=document.createElement('div');
+  d.className='h-dot'+(i===0?' active':'');
+  d.onclick=()=>goSlide(i);
+  dotsW.appendChild(d);
+});
+function goSlide(n){
+  slides[cur].classList.remove('active');
+  dotsW.children[cur].classList.remove('active');
+  cur=(n+slides.length)%slides.length;
+  slides[cur].classList.add('active');
+  dotsW.children[cur].classList.add('active');
+  clearInterval(htimer);
+  htimer=setInterval(()=>goSlide(cur+1),4500);
+}
+htimer=setInterval(()=>goSlide(cur+1),4500);
+
+/* MARQUEE */
+const mqItems=['South India Tours','Honeymoon Packages','Cab Booking Madurai','Kerala Tours','Hill Stations','Temple Tours','Beach Holidays','Backwater Cruises','Pilgrim Circuits','Custom Packages'];
+const mqT=document.getElementById('mqTrack');
+[...mqItems,...mqItems].forEach(t=>{
+  const el=document.createElement('span');
+  el.className='mq-item';
+  el.innerHTML=t+'<span class="mq-dot">◆</span>';
+  mqT.appendChild(el);
+});
+
+/* SCROLL REVEAL */
+const rvEls=document.querySelectorAll('.reveal');
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rvObs.unobserve(e.target);}});
+},{threshold:0.08,rootMargin:'0px 0px -50px 0px'});
+rvEls.forEach(el=>rvObs.observe(el));
+
+/* ACTIVE NAV LINK */
+const secs=document.querySelectorAll('section[id]');
+const nLinks=document.querySelectorAll('.nav-links a:not(.nav-cta)');
+window.addEventListener('scroll',()=>{
+  let active='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)active=s.id;});
+  nLinks.forEach(a=>{a.classList.toggle('active-link',a.getAttribute('href')==='#'+active);});
+});
+
+/* FORMS */
+function okCab(){
+  const m=document.getElementById('cabOk');
+  m.classList.add('show');
+  setTimeout(()=>m.classList.remove('show'),5500);
+}
+
+
+function okEnq(){
+  const m=document.getElementById('enqOk');
+  m.classList.add('show');
+  setTimeout(()=>m.classList.remove('show'),5500);
+}
+</script>
 </body>
 </html>
